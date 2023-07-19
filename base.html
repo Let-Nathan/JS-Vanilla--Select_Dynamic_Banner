@@ -1,32 +1,23 @@
-.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <script src="script.js"></script>
+        <title>Customise your banner</title>
     </head>
     <body>
+      
+        <nav class="top-banner"></nav> 
+        <div class="block-content">
+          <h1>Customise your banner </h1>
+          <p>select images and confirm to customize your banner :)</p>
+          <div id="container-banner">
 
-        <script>
-             
-           let age = prompt("Quel est ton age ?");
-            
-           let answer1 = " ans, tu es très jeune.";
-           let answer2 = " ans, tu es jeune."
-           let answer3 = " ans, tu es encore jeune.";
-           let answer4 = " ans, le début de la vraie sagesse.";
-           let answer5 = " ans, une grande sagesse."
-           let answer6 = " ans, une retraite bien méritée."
-
-           age > 0 && age <= 17 ? console.log(age + answer1) : 
-           age <= 18 && age >= 25 ? console.log(age + answer2) : 
-           age <= 26 && age >= 45 ? console.log(age + answer3) :
-           age <= 46 && age >= 55 ? console.log(age + answer4) : 
-           age <= 56 && age >= 64 ? console.log(age + answer5) :
-           age <= 65 >= 110 ? console.log(age + answer6) :
-           console.log("god bless");
-
-        </script>
-            
+          </div>
+          <button onclick="">Valider</button>
+        </div>
     </body>
+
 </html>

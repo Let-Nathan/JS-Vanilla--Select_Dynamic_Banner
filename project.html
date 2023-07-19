@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+</head>
+<body>
+  <div class="banner">
+    <img src="image1.jpg" alt="Image 1" />
+    <img src="image2.jpg" alt="Image 2" />
+    <img src="image3.jpg" alt="Image 3" />
+  </div>
+
+  <div class="selected-images">
+    <img src="image4.jpg" alt="Image 4" />
+    <img src="image5.jpg" alt="Image 5" />
+    <img src="image6.jpg" alt="Image 6" />
+    <!-- Ajoutez plus d'images sélectionnables ici -->
+  </div>
+
+  <button onclick="validerSelection()">Valider et Envoyer</button>
+
+  <script>
+    var bannerImages = document.querySelectorAll('.banner img');
+    var selectedImages = document.querySelectorAll('.selected-images img');
+
+    var currentIndex = 0;
+
+    setInterval(function() {
+      bannerImages[currentIndex].style.display = 'none';
+
+      currentIndex++;
+      if (currentIndex >= bannerImages.length) {
+        currentIndex = 0;
+      }
+
+      bannerImages[currentIndex].style.display = 'block';
+    }, 2000);
+
+    function validerSelection() {
+      var selectedImagesContainer = document.querySelector('.selected-images');
+      var selectedImages = selectedImagesContainer.querySelectorAll('img.selected');
+
+      for (var i = 0; i < bannerImages.length; i++) {
+        bannerImages[i].src = selectedImages[i].src;
+      }
+    }
+
+    selectedImages.forEach(function(image) {
+      image.addEventListener('click', function() {
+        this.classList.toggle('selected');
+      });
+    });
+  </script>
+</body>
+</html>

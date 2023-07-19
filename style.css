@@ -1,0 +1,30 @@
+body {
+    width: 100%;
+    height: 100%;
+
+}
+
+.block-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.container-banner {
+    
+    display: block;
+}
+
+.top-banner img {
+    max-height: 15rem;
+    width: 100%;
+    min-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    display: block;
+    
+}
+
+ 
