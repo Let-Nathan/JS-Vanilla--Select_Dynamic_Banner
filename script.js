@@ -31,8 +31,9 @@ function clean() {
 function blockFactory(maxSquare, maxRow) {
     for(i = 1; i <= maxSquare; i++) {
         creatBlock(i, maxSquare);
+       
         for(j = 0; j <= maxRow; j++) {
-            creatBlock(j, maxRow);
+            creatBlock(i, maxRow, j);
         }
     }
 }
@@ -41,7 +42,7 @@ function blockFactory(maxSquare, maxRow) {
  * @name creatBlock
  * @return DOM block
  */
-function creatBlock(blockNbr, maxColumn) {
+function creatBlock(blockNbr, maxRow, j) {
     let containerGrid = document.getElementById("container-grid");
     let block = document.createElement("div");
     block.className = "block" + blockNbr;
@@ -53,6 +54,7 @@ function creatBlock(blockNbr, maxColumn) {
     block.style.width = 300;
     block.style.maxWidth = 300;
     block.style.gridColumn = blockNbr;
+    block.style.gridRow = j;
    
     containerGrid.appendChild(block);
     
