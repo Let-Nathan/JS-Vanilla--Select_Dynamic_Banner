@@ -14,19 +14,31 @@ function displayWindowsSize(){
 }
 
 window.addEventListener("resize", function(){
-    console.log(displayWindowsSize());
+    let windowSize = displayWindowsSize();
+
 });
 
 /**
  * @name creatBlock
  * @return DOM block
  */
-function creatBlock() {
+function creatBlock(width, height) {
     let containerGrid = document.getElementById("container-grid");
     let block = document.createElement("div");
     block.className = "block";
     block.style.backgroundColor = "black";
-    block.style.height = 250;
-    block.style.width = 250;
+    block.style.height = 300;
+    block.style.width = 300;
     containerGrid.appendChild(block);
+    
+}
+
+function calculeMaxColumn(windowWidth) {
+
+    return 
+}
+
+function dynamicalSizeGrid() {
+    let grid = document.querySelector('#container-grid');
+
 }
