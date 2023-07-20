@@ -173,7 +173,6 @@ function addImageToGrid(imagesToPick){
         count++;   
         
         onClick(imagesToPick[i]);
-        //Call asynch func to link event listener
         onOver(imagesToPick[i]);
         outover(imagesToPick[i]);
      
