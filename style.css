@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +10,6 @@ body {
     align-items: center;
 
 }
-
 
 .top-banner img {
     margin: 0;
@@ -27,9 +25,9 @@ body {
 }
 
 .block-title h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 2rem 0px 0px 0px;
     padding: 1px;
-    
 }
 
 .block-title p {
@@ -41,8 +39,7 @@ body {
     border: solid blue;
 }
 
-#button-submit {
-   
+#button-submit {  
         position: relative;
         display: block;
         width: 200px;

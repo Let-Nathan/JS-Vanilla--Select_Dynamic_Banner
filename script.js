@@ -1,4 +1,3 @@
-
 /**
  * @description event listener ==> wait html content is totaly load
  */
@@ -33,7 +32,7 @@ function triggerButtonConfirm() {
        
     //if true raz imagesBanner : to store new value && imageIndex : restore loop through start (prevent start from wrong index)
     if(clickedImages.length != 0) {
-
+      
         imagesBanner = [];
         imageIndex = 0;
         //add all images in banner array
@@ -41,11 +40,14 @@ function triggerButtonConfirm() {
             let image = new Image();
             image.src = "assets/banner/" + clickedImages[i];
             imagesBanner.push(image);
+           
         }
+    } else {
+   
+        //if false : reload the banner content with default images.   
+        loadBannerImages();  
+        changeBannerImage();
     }
-    //if false : reload the banner content with default images.   
-    loadBannerImages();  
-    changeBannerImage();
     })
 }
 /**
@@ -77,7 +79,6 @@ function getLocalStorageImg() {
             let image = new Image();
                 image.src = "assets/banner/" + clickedImages[i];
                 imagesBanner.push(image);        
-            
         }
     }        
 }
@@ -171,14 +172,12 @@ function addImageToGrid(imagesToPick){
             imagesToPick[i].style.gridColumn = i + 1;
             containerColumn.c3.append(imagesToPick[i]);
         }
-
         if(count == 12) count = 0;
         count++;   
-        
+   
         onClick(imagesToPick[i]);
         onOver(imagesToPick[i]);
-        outover(imagesToPick[i]);
-     
+        outover(imagesToPick[i]);  
     }
 }
 
