@@ -73,9 +73,11 @@ function getLocalStorageImg() {
     const clickedImages = JSON.parse(localStorage.getItem("clickedImages"));
     if(clickedImages.length != 0 && clickedImages != null) {   
         for(i = 0; i < clickedImages.length; i++) {
+            //banner
             let image = new Image();
                 image.src = "assets/banner/" + clickedImages[i];
-                imagesBanner.push(image); 
+                imagesBanner.push(image);        
+            
         }
     }        
 }
