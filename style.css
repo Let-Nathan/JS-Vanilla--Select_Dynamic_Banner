@@ -1,7 +1,7 @@
 body {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: 100%;
-
 }
 
 .block-content {
@@ -11,12 +11,10 @@ body {
 
 }
 
-.container-banner {
-    
-    display: block;
-}
 
 .top-banner img {
+    margin: 0;
+    padding: 0;
     max-height: 15rem;
     width: 100%;
     min-width: 100%;
@@ -25,6 +23,44 @@ body {
     background-size: 100%;
     display: block;
     
+}
+
+.block-title h1 {
+    margin: 2rem 0px 0px 0px;
+    padding: 1px;
+    
+}
+
+.block-title p {
+    margin: 0px 0px 4rem 0px;
+    padding: 0px;
+}
+
+.border-blue {
+    border: solid blue;
+}
+
+#button-submit {
+   
+        position: relative;
+        display: block;
+        width: 200px;
+        height: 36px;
+        border-radius: 18px;
+        background-color: transparent;
+        border: solid 2px black ;
+        color: black;
+        margin: 3rem;
+        font-size: 18px;
+        font-weight: 300;
+        cursor: pointer;
+        transition: all .1s ease-in-out;
+        &:hover {
+          background-color:  white;
+          color : blue;
+          border-color: blue;
+          transition: all .1s ease-in-out;
+        }     
 }
 
  
