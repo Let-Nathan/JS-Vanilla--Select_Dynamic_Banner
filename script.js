@@ -42,10 +42,11 @@ function triggerButtonConfirm() {
             image.src = "assets/banner/" + clickedImages[i];
             imagesBanner.push(image);
         }
-    }
+    } else {
     //if false : reload the banner content with default images.   
     loadBannerImages();  
     changeBannerImage();
+    }
     })
 }
 /**
@@ -253,3 +254,32 @@ function localStorageManager(imageID) {
     // Save the updated clickedImages array in localStorage
     localStorage.setItem("clickedImages", JSON.stringify(clickedImages));
 }
+
+
+function initDeezerSDK() {
+    DZ.init({
+        appId: 'YOUR_DEEZER_APP_ID',
+        channelUrl: 'YOUR_CHANNEL_URL',
+    });
+}
+
+// Create the music player
+function createMusicPlayer() {
+    DZ.player.create({
+        container: 'deezer-player',
+        playlist: 'YOUR_DEEZER_PLAYLIST_ID',
+        width: '100%',
+        height: '60',
+        onload: function () {
+            DZ.player.playPlaylist();
+        },
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // ... existing code ...
+
+    // Call the functions to initialize the Deezer SDK and create the music player
+    initDeezerSDK();
+    createMusicPlayer();
+});
