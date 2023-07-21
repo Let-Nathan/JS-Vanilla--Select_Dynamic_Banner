@@ -26,7 +26,7 @@ function getWeatherData() {
             // Récupérer les données météo réelles et les afficher dans le div weather-info
             const weatherInfoDiv = document.getElementById('weather-info');
             weatherInfoDiv.innerHTML = `
-                <h2>Weather Info</h2>
+                <h3>Weather Info</h3>
                 <p>Temperature: ${data.main.temp} °C</p>
                 <p>Weather Condition: ${data.weather[0].description}</p>
                 <p>Wind Speed: ${data.wind.speed} m/s</p>
