@@ -8,6 +8,44 @@ var topBanner = document.querySelector('.top-banner');
 var imageIndex = 0;
 var imagesBanner = [];
 
+
+
+var topBanner = document.querySelector('.top-banner');
+
+function getWeatherData() {
+    // Remplacez 'YOUR_API_KEY' par votre clé d'API OpenWeatherMap
+    const apiKey = '27c3cd3bf960b3e83cc6685ea1cd2ed1';
+    // Remplacez 'YOUR_CITY' par le nom de la ville dont vous souhaitez obtenir les données météo
+    const city = 'Bordeaux';
+    // URL de l'API OpenWeatherMap
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Récupérer les données météo réelles et les afficher dans le div weather-info
+            const weatherInfoDiv = document.getElementById('weather-info');
+            weatherInfoDiv.innerHTML = `
+                <h2>Weather Info</h2>
+                <p>Temperature: ${data.main.temp} °C</p>
+                <p>Weather Condition: ${data.weather[0].description}</p>
+                <p>Wind Speed: ${data.wind.speed} m/s</p>
+                <!-- ... d'autres informations météo réelles ... -->
+            `;
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
+}
+
+// Ajoutons un bouton pour actualiser les informations météo
+const refreshButton = document.createElement('button');
+refreshButton.textContent = 'Refresh Weather';
+refreshButton.addEventListener('click', getWeatherData);
+topBanner.appendChild(refreshButton);
+
+// Appel initial pour récupérer les informations météo
+getWeatherData();
 /**
  * @Todo Add a random for selected differents images every times 
  * @name loadBannerImages
@@ -96,6 +134,8 @@ function getLocalStorageImg() {
     setInterval(changeBannerImage, 2000);
     getImage();
     triggerButtonConfirm();
+    
+
 });
 
 //store images for user selection
@@ -254,32 +294,3 @@ function localStorageManager(imageID) {
     // Save the updated clickedImages array in localStorage
     localStorage.setItem("clickedImages", JSON.stringify(clickedImages));
 }
-
-
-function initDeezerSDK() {
-    DZ.init({
-        appId: 'YOUR_DEEZER_APP_ID',
-        channelUrl: 'YOUR_CHANNEL_URL',
-    });
-}
-
-// Create the music player
-function createMusicPlayer() {
-    DZ.player.create({
-        container: 'deezer-player',
-        playlist: 'YOUR_DEEZER_PLAYLIST_ID',
-        width: '100%',
-        height: '60',
-        onload: function () {
-            DZ.player.playPlaylist();
-        },
-    });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    // ... existing code ...
-
-    // Call the functions to initialize the Deezer SDK and create the music player
-    initDeezerSDK();
-    createMusicPlayer();
-});
